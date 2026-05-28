@@ -8,6 +8,7 @@
 - [핵심 아키텍처](docs/core-architecture.md)
 - [동작 흐름](docs/operation-flow.md)
 - [모듈 가이드](docs/module-guide.md)
+- [실행 가이드](docs/run-guide.md)
 
 ## 유지보수 원칙
 
