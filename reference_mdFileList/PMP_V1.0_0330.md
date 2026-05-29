@@ -1,5 +1,18 @@
 # 프로젝트 관리 계획서
 
+## 문서 동기화 메모
+
+- 마지막 동기화 일자: 2026-05-29
+- 본 문서는 계획 기준 원문 성격을 유지하며, 구현 반영 상세는 `SDD_V1_0_0528.md`와 `program/docs` 문서를 우선 참조한다.
+
+## 개정 이력 (정리본)
+
+| 버전   | 개정 일자  | 변경 내용                                | 작성자  | 승인자 |
+| ------ | ---------- | ---------------------------------------- | ------- | ------ |
+| ver1.0 | 2026-03-30 | PMP 1차 작성                             | 김종규  | PM     |
+| ver1.1 | 2026-04-07 | 표지 문서명 및 제목 수정                 | 김종규  | PM     |
+| ver1.2 | 2026-05-29 | Markdown 동기화 메모 및 이력 정리본 추가 | Copilot | PM     |
+
 프로젝트 관리 계획서
 (System Requirement Specification)
 연구실 안전관리 시스템 구축
@@ -479,7 +492,7 @@ html, css, js
 하드웨어
 CPU - Intel Core Ultra5 255H,
 GPU - RTX 4050, SSD - 512GB, RAM 16GB
-CPU 3.1GHz이상, 4Core, 16GB 메모리 이상, HDD 1TB * 2EA
+CPU 3.1GHz이상, 4Core, 16GB 메모리 이상, HDD 1TB \* 2EA
 
 #### 5.1.3 팀원 훈련 계획
 
@@ -798,8 +811,9 @@ R&R
 ##### 5.2.3.1 인적 자원 투입 계획
 
 본 프로젝트는 총 7명(PM 1명, 팀원 6명)의 전담 인력이 투입률 1.0(100%)으로 참여하여 개발의 연속성과 집중도를 확보한다.
+
 - 인적 자원: 팀원 6명
-(각 단계마다 팀장 교체, 팀장 외 인원 팀원으로 프로젝트 임무 수행)
+  (각 단계마다 팀장 교체, 팀장 외 인원 팀원으로 프로젝트 임무 수행)
 
 단계
 팀장
@@ -1069,8 +1083,7 @@ PC, PMP, WBS
 
 ### 2.6 작업분할도 작성
 
-Elaboration
-3.분석
+Elaboration 3.분석
 15
 SRD, SRS
 
@@ -1200,7 +1213,7 @@ Java
 하드웨어
 CPU - Intel Core Ultra5 255H,
 GPU - RTX 4050, SSD - 512GB, RAM 16GB
-CPU 3.1GHz이상, 4Core, 16GB 메모리 이상, HDD 1TB * 2EA
+CPU 3.1GHz이상, 4Core, 16GB 메모리 이상, HDD 1TB \* 2EA
 
 ### 6.4 데이터 관리 계획
 
@@ -1742,26 +1755,13 @@ KISA 가이드 준수, 자체 보안점검, 웹 취약점 진단, 모의해킹, 
 
 단계
 산출물
-계획
--프로젝트 헌장(PC, Project Charter)
--프로젝트 관리계획(PMP, Project Management Plan)
--작업분할도(WBS, Work Breakdown Structure)
-분석
--요구사항정의(SRD, Software Requirement Document)
--요구사항명세(SRS, Software Requirement Specification)
-설계
--설계기술서(SDD, Software Design Description)
--구현계획서(SIP, Software Implementation Plan)
-구현
--소스코드
--구현결과서(SIR, Software Implementation Result)
-시험
--시험계획서(STP, Software Test Plan)
--시험결과서(STR, Software Test Result)
-인도
--유지보수계획서(SMP, Software Maintenance Plan)
-종료
--종료보고서(PCR, Project Close Report)
+계획 -프로젝트 헌장(PC, Project Charter) -프로젝트 관리계획(PMP, Project Management Plan) -작업분할도(WBS, Work Breakdown Structure)
+분석 -요구사항정의(SRD, Software Requirement Document) -요구사항명세(SRS, Software Requirement Specification)
+설계 -설계기술서(SDD, Software Design Description) -구현계획서(SIP, Software Implementation Plan)
+구현 -소스코드 -구현결과서(SIR, Software Implementation Result)
+시험 -시험계획서(STP, Software Test Plan) -시험결과서(STR, Software Test Result)
+인도 -유지보수계획서(SMP, Software Maintenance Plan)
+종료 -종료보고서(PCR, Project Close Report)
 
 #### 7.7.2 산출물 작성 표준 및 품질 관리
 
@@ -1789,27 +1789,28 @@ KISA 가이드 준수, 자체 보안점검, 웹 취약점 진단, 모의해킹, 
 비고
 Major
 X.0.0
+
 - 장(Chapter) 전체 또는 그에 준하는 대규모 개편
 - 사업 범위(Scope)의 근본적인 변동 발생 시
 - 초안(v0.x)에서 최종 승인(Baseline) 시 v1.0 부여
-핵심 변경
-Minor
-0.X.0
+  핵심 변경
+  Minor
+  0.X.0
 - 절(Section, n.n) 단위의 내용 추가 및 수정
 - 기능 요구사항의 부분적 변경 반영 시
-부분 변경
-Patch
-0.0.X
+  부분 변경
+  Patch
+  0.0.X
 - 항(Paragraph) 이하의 단순 문구 수정
 - 오탈자 정정, 서식 및 디자인 보정 등 미세 수정
-단순 수정
+  단순 수정
 - 문서 관리(Notion)
-실시간 협업 및 문서 작성을 진행하며, 최종 승인본은 PDF로 변환하여 보관
+  실시간 협업 및 문서 작성을 진행하며, 최종 승인본은 PDF로 변환하여 보관
 - 파일 명명 규칙
-최초: [팀명]_산출물명_V1.0_날짜.pdf
+  최초: [팀명]*산출물명\_V1.0*날짜.pdf
 - 코드 관리(Github)
-소스코드는 GitHub 저장소를 통해 관리하며, 형상 식별자 체계에 따라 태그(Tag)를 부여함.
-main 브랜치는 승인된 최종 코드만을 유지함.
+  소스코드는 GitHub 저장소를 통해 관리하며, 형상 식별자 체계에 따라 태그(Tag)를 부여함.
+  main 브랜치는 승인된 최종 코드만을 유지함.
 
 ## 8 부록
 
@@ -2638,20 +2639,20 @@ D.3.1
 
 ### 8.3 참고자료
 
-(2023년_개정판)_SW사업_대가산정_가이드.pdf
+(2023년*개정판)\_SW사업*대가산정*가이드.pdf
 .pdf
-Project_.pdf
-Project_.pdf
-[참고자료]_1_기능점수방식_SW개발비_산정_사례_200922.hwp
-[참고자료]_2_기능점수방식_SW재개발비_산정_사례_200922.hwp
-[참고자료]_3_기능점수방식_SW재개발비_산정_사례_201022.hwp
-[참고자료]_4_정보시스템_통합유지관리비(운영포함)_산정_사례_201029.hwp
-[참고자료]_5_기능점수방식_SW유지관리비_산정_사례_201029.hwp
-개발비산정_기능점수_간이법.xlsx
+Project*.pdf
+Project*.pdf
+[참고자료]\_1*기능점수방식*SW개발비*산정*사례\_200922.hwp
+[참고자료]\_2*기능점수방식*SW재개발비*산정*사례\_200922.hwp
+[참고자료]\_3*기능점수방식*SW재개발비*산정*사례\_201022.hwp
+[참고자료]\_4*정보시스템*통합유지관리비(운영포함)*산정*사례\_201029.hwp
+[참고자료]\_5*기능점수방식*SW유지관리비*산정*사례\_201029.hwp
+개발비산정*기능점수*간이법.xlsx
 (WBS)객체지향개발방법론.pdf
 (WBS)구조적개발방법론.pdf
 (WBS)CBD개발방법론.pdf
-2026년_적용_SW기술자_평균임금_공표.hwp
+2026년*적용*SW기술자*평균임금\_공표.hwp
 
 ### 8.4 업무 분장
 

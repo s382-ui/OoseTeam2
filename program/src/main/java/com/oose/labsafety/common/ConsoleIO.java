@@ -1,6 +1,7 @@
 package com.oose.labsafety.common;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
@@ -53,6 +54,17 @@ public final class ConsoleIO {
                 return LocalDate.parse(value);
             } catch (DateTimeParseException ignored) {
                 println("날짜 형식이 올바르지 않습니다.");
+            }
+        }
+    }
+
+    public LocalDateTime readDateTime(String prompt) {
+        while (true) {
+            String value = readRequiredLine(prompt + " (yyyy-MM-ddTHH:mm): ");
+            try {
+                return LocalDateTime.parse(value);
+            } catch (DateTimeParseException ignored) {
+                println("일시 형식이 올바르지 않습니다. 예: 2026-05-29T14:30");
             }
         }
     }

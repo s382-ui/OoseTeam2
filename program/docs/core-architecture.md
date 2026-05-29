@@ -1,5 +1,18 @@
 # Core Architecture
 
+## 문서 동기화 정보
+
+- 마지막 동기화 일자: 2026-05-29
+- 기준: SDD v1.0.0 (`reference_mdFileList/SDD_V1_0_0528.md`)
+- 메모: 현재 구현은 `Boundary -> presentation`, `Control -> application`, `Entity -> domain`, `DB access -> infrastructure` 매핑을 따른다.
+
+## 개정 이력
+
+| 버전   | 일자       | 변경 내용                         |
+| ------ | ---------- | --------------------------------- |
+| v1.0.0 | 2026-05-29 | 계층/패턴/확장 규칙 문서화        |
+| v1.1.0 | 2026-05-29 | SDD 기준 매핑 및 동기화 정보 추가 |
+
 ## 1. 계층
 
 시스템은 다음 순서로 흐른다.

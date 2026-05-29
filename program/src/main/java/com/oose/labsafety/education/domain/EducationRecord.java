@@ -6,22 +6,25 @@ import com.oose.labsafety.common.Identifiable;
 import java.time.LocalDate;
 
 public record EducationRecord(
-        String educationId,
-        String traineeName,
-        String courseName,
-        String department,
+    String completionResultId,
+    String researcherId,
+    String openingId,
+    String learningResultId,
+    String logId,
         LocalDate completionDate,
-        String completionStatus
+    int recognizedHours,
+    String completionStatus,
+    boolean manualRegistered
 ) implements Identifiable, Displayable {
 
     @Override
     public String id() {
-        return educationId;
+        return completionResultId;
     }
 
     @Override
     public String summary() {
-        return "교육ID=%s, 대상자=%s, 과정=%s, 부서=%s, 이수일=%s, 상태=%s".formatted(
-                educationId, traineeName, courseName, department, completionDate, completionStatus);
+        return "이수결과ID=%s, 연구활동종사자ID=%s, 개설ID=%s, 이수일=%s, 인정시간=%d, 상태=%s, 수동등록=%s".formatted(
+            completionResultId, researcherId, openingId, completionDate, recognizedHours, completionStatus, manualRegistered);
     }
 }

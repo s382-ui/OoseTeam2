@@ -3,25 +3,24 @@ package com.oose.labsafety.inspection.domain;
 import com.oose.labsafety.common.Displayable;
 import com.oose.labsafety.common.Identifiable;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public record InspectionRecord(
-        String inspectionId,
-        String inspectionType,
-        String targetLaboratory,
-        LocalDate inspectionDate,
-        String resultStatus,
-        String inspectorName
+    String categoryCode,
+    String categoryName,
+    String categoryDetail,
+    boolean useYn,
+    LocalDateTime createdAt
 ) implements Identifiable, Displayable {
 
     @Override
     public String id() {
-        return inspectionId;
+        return categoryCode;
     }
 
     @Override
     public String summary() {
-        return "점검ID=%s, 유형=%s, 대상=%s, 점검일=%s, 결과=%s, 점검자=%s".formatted(
-                inspectionId, inspectionType, targetLaboratory, inspectionDate, resultStatus, inspectorName);
+        return "분류코드=%s, 분류명=%s, 상세=%s, 사용여부=%s, 등록일시=%s".formatted(
+            categoryCode, categoryName, categoryDetail, useYn, createdAt);
     }
 }

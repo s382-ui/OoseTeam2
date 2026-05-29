@@ -1,5 +1,18 @@
 # 실행 가이드
 
+## 문서 동기화 정보
+
+- 마지막 동기화 일자: 2026-05-29
+- 기준 문서: `reference_mdFileList/SDD_V1_0_0528.md`
+- 현재 상태: `gradlew.bat` 미포함 환경 기준 실행 방법을 우선 제공한다.
+
+## 개정 이력
+
+| 버전   | 일자       | 변경 내용                                    |
+| ------ | ---------- | -------------------------------------------- |
+| v1.0.0 | 2026-05-29 | 실행 절차 및 수동 컴파일 방법 정리           |
+| v1.1.0 | 2026-05-29 | DateTime 입력 형식 및 Wrapper 부재 안내 반영 |
+
 ## 1. 목적
 
 이 문서는 `program` 폴더의 연구실 안전관리 시스템을 실제로 실행하는 방법을 정리한다. 현재 프로젝트는 Java 21 기반의 콘솔 애플리케이션이며, 빌드 도구는 Gradle을 사용한다.
@@ -22,6 +35,8 @@ gradle -v
 ## 3. 권장 실행 방법
 
 Gradle CLI가 설치된 경우 다음 순서로 실행한다.
+
+참고: 현재 저장소에는 Gradle Wrapper(`gradlew.bat`)가 포함되어 있지 않다.
 
 ```powershell
 Set-Location C:\Users\tjdgns\OneDrive\Desktop\3-1\Object-Oriented_SoftwareEngineering\OOSE\program
@@ -63,6 +78,11 @@ java -cp out com.oose.labsafety.LabSafetyApplication
 - 데모 데이터 적재
 - 전체 삭제
 - 뒤로가기
+
+신규 등록 입력에서 날짜/일시는 다음 형식을 사용한다.
+
+- 날짜: `yyyy-MM-dd`
+- 일시: `yyyy-MM-ddTHH:mm` (예: `2026-05-29T14:30`)
 
 ## 6. 종료 방법
 

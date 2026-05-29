@@ -3,14 +3,18 @@ package com.oose.labsafety.chemical.domain;
 import com.oose.labsafety.common.Displayable;
 import com.oose.labsafety.common.Identifiable;
 
+import java.time.LocalDateTime;
+
 public record ChemicalItem(
         String chemicalId,
+    String manufacturerName,
         String chemicalName,
-        String hazardClass,
-        String storageLocation,
-        int quantity,
-        String unit,
-        String status
+    String casNumber,
+    String contentRate,
+    String msdsPath,
+    String analysisPath,
+    String status,
+    LocalDateTime createdAt
 ) implements Identifiable, Displayable {
 
     @Override
@@ -20,7 +24,7 @@ public record ChemicalItem(
 
     @Override
     public String summary() {
-        return "화학물질ID=%s, 명칭=%s, 분류=%s, 위치=%s, 수량=%d%s, 상태=%s".formatted(
-                chemicalId, chemicalName, hazardClass, storageLocation, quantity, unit, status);
+        return "화학물질ID=%s, 제조사=%s, 명칭=%s, CAS=%s, 함유량=%s, 상태=%s".formatted(
+            chemicalId, manufacturerName, chemicalName, casNumber, contentRate, status);
     }
 }

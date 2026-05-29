@@ -5,13 +5,13 @@ import com.oose.labsafety.common.ConsoleIO;
 import com.oose.labsafety.laboratory.application.LaboratoryService;
 import com.oose.labsafety.laboratory.domain.LaboratoryProfile;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public final class LaboratoryMenu extends AbstractCatalogModule<LaboratoryProfile> {
 
     public LaboratoryMenu(LaboratoryService service) {
-        super("LAB", "연구실 관리", "연구실 기본 정보와 책임자 정보를 관리한다.", service);
+        super("LAB", "연구실 관리", "연구실 등록/조회 및 위치 중복 방지를 위한 기본 정보를 관리한다.", service);
     }
 
     @Override
@@ -19,19 +19,24 @@ public final class LaboratoryMenu extends AbstractCatalogModule<LaboratoryProfil
         return new LaboratoryProfile(
                 io.readRequiredLine("연구실 ID: "),
                 io.readRequiredLine("연구실 명칭: "),
+            io.readRequiredLine("건물명: "),
+            io.readRequiredLine("층: "),
+            io.readRequiredLine("호실: "),
+            io.readRequiredLine("소속 학과/부서: "),
+            io.readRequiredLine("책임자 사용자 ID: "),
                 io.readRequiredLine("책임자 이름: "),
-                io.readRequiredLine("위치: "),
-                io.readRequiredLine("안전등급: "),
-                io.readRequiredLine("상태: "),
-                io.readDate("등록일")
+            io.readRequiredLine("연락처: "),
+            io.readRequiredLine("관리 등급: "),
+            io.readRequiredLine("사용 여부(Y/N): "),
+            io.readDateTime("등록 일시")
         );
     }
 
     @Override
     protected List<LaboratoryProfile> sampleRecords() {
         return List.of(
-                new LaboratoryProfile("L-001", "분석화학실", "서가연", "본관 3층", "A", "ACTIVE", LocalDate.of(2026, 5, 7)),
-                new LaboratoryProfile("L-002", "생명과학실", "김종규", "연구동 2층", "B", "ACTIVE", LocalDate.of(2026, 5, 8))
+            new LaboratoryProfile("LAB-001", "분석화학실", "본관", "3", "301", "화학과", "20260001", "서가연", "02-111-1111", "A", "Y", LocalDateTime.of(2026, 5, 7, 10, 0)),
+            new LaboratoryProfile("LAB-002", "생명과학실", "연구동", "2", "205", "생명과학과", "20260002", "김종규", "02-222-2222", "B", "Y", LocalDateTime.of(2026, 5, 8, 10, 30))
         );
     }
 }
