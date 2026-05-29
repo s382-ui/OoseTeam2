@@ -6,9 +6,9 @@ import com.oose.labsafety.common.Identifiable;
 import java.time.LocalDateTime;
 
 public record ChemicalItem(
-        String chemicalId,
+    String chemicalId,
     String manufacturerName,
-        String chemicalName,
+    String chemicalName,
     String casNumber,
     String contentRate,
     String msdsPath,
@@ -24,7 +24,7 @@ public record ChemicalItem(
 
     @Override
     public String summary() {
-        return "화학물질ID=%s, 제조사=%s, 명칭=%s, CAS=%s, 함유량=%s, 상태=%s".formatted(
-            chemicalId, manufacturerName, chemicalName, casNumber, contentRate, status);
+        return "화학물질ID=%s, 제조사=%s, 명칭=%s, CAS=%s, 함유량=%s, MSDS=%s, 성분분석표=%s, 상태=%s, 등록일시=%s".formatted(
+            chemicalId, manufacturerName, chemicalName, casNumber, contentRate, msdsPath, analysisPath, status, createdAt);
     }
 }

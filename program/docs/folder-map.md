@@ -3,7 +3,7 @@
 ## 문서 동기화 정보
 
 - 마지막 동기화 일자: 2026-05-29
-- 기준 문서: `reference_mdFileList/SDD_V1_0_0528.md`
+- 기준 문서: `../../reference_mdFileList/SDD_V1_0_0528.md`
 - 참고: 실제 코드의 도메인 클래스명(`UserAccount`, `LaboratoryProfile` 등)은 기존 명칭을 유지하되, 필드 구성은 SDD 엔티티 명세를 반영한다.
 
 ## 개정 이력
@@ -12,6 +12,7 @@
 | ------ | ---------- | ------------------------------------------- |
 | v1.0.0 | 2026-05-29 | 패키지 구조 및 수정 기준 정리               |
 | v1.1.0 | 2026-05-29 | SDD 기준 필드 반영 메모 및 동기화 정보 추가 |
+| v1.2.0 | 2026-05-29 | 추적 문서와 공통 메뉴 기능 연결 기준 추가   |
 
 ## 1. 개요
 
@@ -25,6 +26,7 @@ program/
   settings.gradle
   README.md
   docs/
+    traceability-map.md
   src/main/java/com/oose/labsafety/
 ```
 
@@ -68,3 +70,4 @@ user/
 - 데이터 규칙 변경은 `domain`부터 본다.
 - 저장 방식 변경은 `infrastructure`부터 본다.
 - 메뉴 동작 변경은 `AbstractCatalogModule`과 각 모듈의 `presentation`을 함께 본다.
+- 요구사항-설계-코드 연결 변경은 `docs/traceability-map.md`를 먼저 갱신한다.

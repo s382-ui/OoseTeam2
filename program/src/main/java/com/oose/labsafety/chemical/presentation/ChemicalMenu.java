@@ -17,9 +17,9 @@ public final class ChemicalMenu extends AbstractCatalogModule<ChemicalItem> {
     @Override
     protected ChemicalItem createRecord(ConsoleIO io) {
         return new ChemicalItem(
-                io.readRequiredLine("화학물질 ID: "),
+            io.readRequiredLine("화학물질 ID: "),
             io.readRequiredLine("제조사명: "),
-                io.readRequiredLine("명칭: "),
+            io.readRequiredLine("명칭: "),
             io.readRequiredLine("CAS 번호: "),
             io.readRequiredLine("성분 함유량: "),
             io.readRequiredLine("MSDS 경로: "),

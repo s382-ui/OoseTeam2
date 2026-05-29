@@ -17,14 +17,14 @@ public final class LaboratoryMenu extends AbstractCatalogModule<LaboratoryProfil
     @Override
     protected LaboratoryProfile createRecord(ConsoleIO io) {
         return new LaboratoryProfile(
-                io.readRequiredLine("연구실 ID: "),
-                io.readRequiredLine("연구실 명칭: "),
+            io.readRequiredLine("연구실 ID: "),
+            io.readRequiredLine("연구실 명칭: "),
             io.readRequiredLine("건물명: "),
             io.readRequiredLine("층: "),
             io.readRequiredLine("호실: "),
             io.readRequiredLine("소속 학과/부서: "),
             io.readRequiredLine("책임자 사용자 ID: "),
-                io.readRequiredLine("책임자 이름: "),
+            io.readRequiredLine("책임자 이름: "),
             io.readRequiredLine("연락처: "),
             io.readRequiredLine("관리 등급: "),
             io.readRequiredLine("사용 여부(Y/N): "),

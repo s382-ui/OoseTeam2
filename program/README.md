@@ -3,8 +3,8 @@
 ## 문서 동기화 정보
 
 - 마지막 동기화 일자: 2026-05-29
-- 기준 문서: `reference_mdFileList/SDD_V1_0_0528.md`
-- 반영 범위: 콘솔 입력 필드와 모듈 설명 문서
+- 기준 문서: `../reference_mdFileList/SRS_V1_0_0528.md`, `../reference_mdFileList/SDD_V1_0_0528.md`
+- 반영 범위: 콘솔 입력 필드, 공통 검색/상세조회/수정/삭제 흐름, 모듈 설명 문서
 
 ## 개정 이력
 
@@ -12,10 +12,12 @@
 | ------ | ---------- | -------------------------------------------------- |
 | v1.0.0 | 2026-05-29 | README 초안 작성                                   |
 | v1.1.0 | 2026-05-29 | SDD 기준 반영 현황 및 실행 제약(Wrapper 부재) 반영 |
+| v1.2.0 | 2026-05-29 | SRS/SDD/코드 추적 문서와 공통 조회/삭제 흐름 반영 |
+| v1.3.0 | 2026-05-29 | 문서 기준 공통 수정 흐름 및 중복 등록 방지 반영 |
 
 `program` 폴더는 연구실 안전관리 시스템의 Java 21 구현체다. 현재 구현은 콘솔 기반 모듈형 모놀리식 구조이며, 기능은 `user`, `laboratory`, `chemical`, `waste`, `inspection`, `education` 모듈로 분리한다.
 
-최신 기준 문서는 `reference_mdFileList/SDD_V1_0_0528.md`이며, 현재 코드의 도메인 입력 항목도 해당 SDD 명세를 기준으로 정렬했다.
+최신 기준 문서는 `../reference_mdFileList/SRS_V1_0_0528.md`와 `../reference_mdFileList/SDD_V1_0_0528.md`이며, 현재 코드의 도메인 입력 항목과 공통 메뉴 흐름은 해당 명세를 기준으로 정렬했다.
 
 ## SDD 반영 현황 (요약)
 
@@ -26,6 +28,7 @@
 - 점검 관리: 점검분야 분류(`InspectionCategory`) 중심 필드 반영
 - 안전교육 관리: 교육이수결과(`EducationCompletionResult`) 중심 필드 반영
 - 공통 입력: `yyyy-MM-ddTHH:mm` 형식의 DateTime 입력 지원
+- 공통 메뉴: 목록, 키워드 검색, 상세 조회, 신규 등록, 식별자 수정, 데모 데이터 적재, 식별자 삭제, 전체 삭제 지원
 
 ## 핵심 참고 문서
 
@@ -33,6 +36,7 @@
 - [핵심 아키텍처](docs/core-architecture.md)
 - [동작 흐름](docs/operation-flow.md)
 - [모듈 가이드](docs/module-guide.md)
+- [요구사항-설계-코드 추적표](docs/traceability-map.md)
 - [실행 가이드](docs/run-guide.md)
 
 ## 유지보수 원칙

@@ -13,7 +13,7 @@ public record LaboratoryProfile(
     String roomNo,
     String departmentName,
     String managerId,
-        String managerName,
+    String managerName,
     String contactNo,
     String managementGrade,
     String isActive,
@@ -27,7 +27,7 @@ public record LaboratoryProfile(
 
     @Override
     public String summary() {
-        return "연구실ID=%s, 명칭=%s, 위치=%s %s층 %s호, 소속=%s, 책임자=%s(%s), 등급=%s, 사용=%s".formatted(
-            labId, labName, buildingName, floor, roomNo, departmentName, managerName, managerId, managementGrade, isActive);
+        return "연구실ID=%s, 명칭=%s, 위치=%s %s층 %s호, 소속=%s, 책임자=%s(%s), 연락처=%s, 등급=%s, 사용=%s, 등록일시=%s".formatted(
+            labId, labName, buildingName, floor, roomNo, departmentName, managerName, managerId, contactNo, managementGrade, isActive, createdAt);
     }
 }

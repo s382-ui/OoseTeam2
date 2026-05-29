@@ -23,7 +23,7 @@ public record WasteRecord(
 
     @Override
     public String summary() {
-        return "분류코드=%s, 분류명=%s, 유형=%s, 성상=%s, 처리방법=%s, 사용=%s".formatted(
-            categoryCode, categoryName, categoryType, propertyInfo, disposalMethod, isActive);
+        return "분류코드=%s, 분류명=%s, 유형=%s, 성상=%s, 처리방법=%s, 관련법규=%s, 사용=%s, 등록일시=%s".formatted(
+            categoryCode, categoryName, categoryType, propertyInfo, disposalMethod, relatedLaw, isActive, createdAt);
     }
 }
