@@ -25,6 +25,8 @@
 - `JAVA_HOME`이 올바르게 설정되어 있어야 한다.
 - Gradle CLI가 설치되어 있으면 가장 간단하게 실행할 수 있다.
 - Gradle CLI가 없어도 `javac`와 `java`만 있으면 수동 실행이 가능하다.
+- MySQL 연동 실행 시 `lab_safety` 스키마가 생성되어 있어야 한다.
+- MySQL 접속 정보는 `src/main/resources/db.properties`에서 설정한다.
 
 확인 명령 예시:
 
@@ -32,6 +34,14 @@
 java -version
 javac -version
 gradle -v
+```
+
+DB 설정 예시:
+
+```properties
+db.url=jdbc:mysql://127.0.0.1:3306/lab_safety?serverTimezone=Asia/Seoul&characterEncoding=utf8&useUnicode=true
+db.user=root
+db.password=본인_MySQL_비밀번호
 ```
 
 ## 3. 권장 실행 방법

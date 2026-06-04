@@ -15,7 +15,7 @@
 | v1.2.0 | 2026-05-29 | SRS/SDD/코드 추적 문서와 공통 조회/삭제 흐름 반영 |
 | v1.3.0 | 2026-05-29 | 문서 기준 공통 수정 흐름 및 중복 등록 방지 반영 |
 
-`program` 폴더는 연구실 안전관리 시스템의 Java 21 구현체다. 현재 구현은 콘솔 기반 모듈형 모놀리식 구조이며, 기능은 `user`, `laboratory`, `chemical`, `waste`, `inspection`, `education` 모듈로 분리한다.
+`program` 폴더는 연구실 안전관리 시스템의 Java 21 구현체다. 현재 구현은 콘솔 기반 모듈형 모놀리식 구조이며, 기능은 `user`, `laboratory`, `chemical`, `waste`, `inspection`, `education` 모듈로 분리한다. 저장소 구현은 MySQL JDBC를 사용하며, 접속 정보는 `src/main/resources/db.properties`에서 설정한다.
 
 최신 기준 문서는 `../reference_mdFileList/SRS_V1_0_0528.md`와 `../reference_mdFileList/SDD_V1_0_0528.md`이며, 현재 코드의 도메인 입력 항목과 공통 메뉴 흐름은 해당 명세를 기준으로 정렬했다.
 
@@ -49,4 +49,5 @@
 
 ## 참고
 
-- 현재 `program` 루트에는 `gradlew.bat`가 없으므로, 실행/빌드는 로컬 `gradle` 설치 또는 `javac` 수동 실행이 필요하다.
+- 현재 `program` 루트에는 `gradlew.bat`가 없으므로, 실행/빌드는 로컬 `gradle` 설치 또는 IDE 실행이 필요하다.
+- MySQL JDBC 드라이버는 Gradle 의존성(`com.mysql:mysql-connector-j`)으로 받는다.

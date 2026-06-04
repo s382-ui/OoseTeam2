@@ -4,9 +4,15 @@ import com.oose.labsafety.chemical.application.ChemicalService;
 import com.oose.labsafety.chemical.infrastructure.ChemicalRepository;
 import com.oose.labsafety.chemical.presentation.ChemicalMenu;
 import com.oose.labsafety.common.ConsoleIO;
-import com.oose.labsafety.education.application.EducationService;
+import com.oose.labsafety.education.application.EducationCompletionControl;
+import com.oose.labsafety.education.application.EducationReferenceControl;
+import com.oose.labsafety.education.application.ResearcherStandardControl;
 import com.oose.labsafety.education.infrastructure.EducationRepository;
+import com.oose.labsafety.education.presentation.CompletionHistorySearchView;
+import com.oose.labsafety.education.presentation.CompletionResultRegisterView;
 import com.oose.labsafety.education.presentation.EducationMenu;
+import com.oose.labsafety.education.presentation.ResearcherStandardRegisterView;
+import com.oose.labsafety.education.presentation.ResearcherStandardSearchView;
 import com.oose.labsafety.inspection.application.InspectionService;
 import com.oose.labsafety.inspection.infrastructure.InspectionRepository;
 import com.oose.labsafety.inspection.presentation.InspectionMenu;
@@ -31,6 +37,11 @@ public final class ApplicationBootstrap {
     }
 
     public ApplicationContext createContext() {
+        EducationRepository educationRepository = new EducationRepository();
+        ResearcherStandardControl researcherStandardControl = new ResearcherStandardControl(educationRepository);
+        EducationCompletionControl educationCompletionControl = new EducationCompletionControl(educationRepository);
+        EducationReferenceControl educationReferenceControl = new EducationReferenceControl(educationRepository);
+
         return new ApplicationContext(
                 new ConsoleIO(),
                 List.of(
@@ -39,7 +50,12 @@ public final class ApplicationBootstrap {
                         new ChemicalMenu(new ChemicalService(new ChemicalRepository())),
                         new WasteMenu(new WasteService(new WasteRepository())),
                         new InspectionMenu(new InspectionService(new InspectionRepository())),
-                        new EducationMenu(new EducationService(new EducationRepository()))
+                        new EducationMenu(
+                                new ResearcherStandardRegisterView(researcherStandardControl),
+                                new ResearcherStandardSearchView(researcherStandardControl),
+                                new CompletionResultRegisterView(educationCompletionControl, educationReferenceControl),
+                                new CompletionHistorySearchView(educationCompletionControl)
+                        )
                 )
         );
     }

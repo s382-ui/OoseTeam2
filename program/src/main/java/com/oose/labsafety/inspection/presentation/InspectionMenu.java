@@ -28,8 +28,8 @@ public final class InspectionMenu extends AbstractCatalogModule<InspectionRecord
     @Override
     protected List<InspectionRecord> sampleRecords() {
         return List.of(
-            new InspectionRecord("CAT-001", "소방안전", "소화기, 비상구 점검", true, LocalDateTime.of(2026, 5, 12, 14, 0)),
-            new InspectionRecord("CAT-002", "화학안전", "MSDS, 보관함, 누출 여부 점검", true, LocalDateTime.of(2026, 5, 13, 14, 30))
+            new InspectionRecord("IC001", "화재·폭발 예방", "화기, 소화기, 전기 안전 관련 점검", true, LocalDateTime.of(2026, 5, 12, 14, 0)),
+            new InspectionRecord("IC002", "화학물질 안전", "화학물질 보관·취급 상태 점검", true, LocalDateTime.of(2026, 5, 13, 14, 30))
         );
     }
 }

@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-public class InMemoryCrudRepository<T extends Identifiable> {
+public class InMemoryCrudRepository<T extends Identifiable> implements CrudRepository<T> {
 
     private final Map<String, T> store = new LinkedHashMap<>();
 

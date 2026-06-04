@@ -35,8 +35,8 @@ public final class LaboratoryMenu extends AbstractCatalogModule<LaboratoryProfil
     @Override
     protected List<LaboratoryProfile> sampleRecords() {
         return List.of(
-            new LaboratoryProfile("LAB-001", "분석화학실", "본관", "3", "301", "화학과", "20260001", "서가연", "02-111-1111", "A", "Y", LocalDateTime.of(2026, 5, 7, 10, 0)),
-            new LaboratoryProfile("LAB-002", "생명과학실", "연구동", "2", "205", "생명과학과", "20260002", "김종규", "02-222-2222", "B", "Y", LocalDateTime.of(2026, 5, 8, 10, 30))
+            new LaboratoryProfile("LAB001", "유기화학 연구실", "공학관", "3", "301호", "화학공학과", "admin001", "관리자", "02-111-1111", "A", "Y", LocalDateTime.of(2026, 5, 7, 10, 0)),
+            new LaboratoryProfile("LAB002", "생명과학 연구실", "과학관", "2", "205호", "생명과학과", "admin001", "관리자", "02-222-2222", "B", "Y", LocalDateTime.of(2026, 5, 8, 10, 30))
         );
     }
 }

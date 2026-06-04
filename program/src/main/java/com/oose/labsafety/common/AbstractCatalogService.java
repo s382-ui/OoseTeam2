@@ -6,9 +6,9 @@ import java.util.Optional;
 
 public abstract class AbstractCatalogService<T extends Identifiable> {
 
-    private final InMemoryCrudRepository<T> repository;
+    private final CrudRepository<T> repository;
 
-    protected AbstractCatalogService(InMemoryCrudRepository<T> repository) {
+    protected AbstractCatalogService(CrudRepository<T> repository) {
         this.repository = repository;
     }
 

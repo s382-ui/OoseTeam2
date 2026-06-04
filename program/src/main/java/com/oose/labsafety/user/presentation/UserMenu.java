@@ -31,8 +31,8 @@ public final class UserMenu extends AbstractCatalogModule<UserAccount> {
     @Override
     protected List<UserAccount> sampleRecords() {
         return List.of(
-            new UserAccount("20260001", "서가연", "화학과", "관리자", "010-1234-5678", "ga-yeon@example.com", "활성", LocalDateTime.of(2026, 5, 7, 9, 0)),
-            new UserAccount("20260002", "김종규", "생명과학과", "연구원", "010-2345-6789", "jong-gyu@example.com", "활성", LocalDateTime.of(2026, 5, 8, 9, 30))
+            new UserAccount("admin001", "관리자", "안전관리팀", "ADMIN", "010-0000-0000", "admin@lab.com", "ACTIVE", LocalDateTime.of(2026, 5, 7, 9, 0)),
+            new UserAccount("user001", "김연구", "화학공학과", "USER", "010-1111-2222", "kim@lab.com", "ACTIVE", LocalDateTime.of(2026, 5, 8, 9, 30))
         );
     }
 }
