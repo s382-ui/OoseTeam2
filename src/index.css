@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+  font-size: 14px;
+  color: #333;
+  background: #f5f6fa;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: 14px;
+}
