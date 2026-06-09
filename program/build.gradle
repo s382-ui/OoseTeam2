@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
 }
 
 group = 'com.oose'
@@ -20,8 +21,13 @@ java {
     }
 }
 
+javafx {
+    version = '21.0.6'
+    modules = ['javafx.controls', 'javafx.fxml']
+}
+
 application {
-    mainClass = 'com.oose.labsafety.LabSafetyApplication'
+    mainClass = 'com.oose.labsafety.fx.LabSafetyFxApplication'
     applicationDefaultJvmArgs = [
         '-Dfile.encoding=UTF-8',
         '-Dsun.stdout.encoding=UTF-8',

@@ -1,4 +1,4 @@
-package com.oose.labsafety.laboratory.application;
+package com.oose.labsafety.laboratory.service;
 
 import com.oose.labsafety.common.AbstractCatalogService;
 import com.oose.labsafety.laboratory.domain.LaboratoryProfile;

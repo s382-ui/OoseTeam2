@@ -1,4 +1,4 @@
-package com.oose.labsafety.waste.application;
+package com.oose.labsafety.waste.service;
 
 import com.oose.labsafety.common.AbstractCatalogService;
 import com.oose.labsafety.waste.domain.WasteRecord;

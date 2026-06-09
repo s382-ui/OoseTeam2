@@ -1,4 +1,4 @@
-package com.oose.labsafety.inspection.application;
+package com.oose.labsafety.inspection.service;
 
 import com.oose.labsafety.common.AbstractCatalogService;
 import com.oose.labsafety.inspection.domain.InspectionRecord;

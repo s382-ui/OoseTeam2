@@ -2,7 +2,7 @@ package com.oose.labsafety.inspection.presentation;
 
 import com.oose.labsafety.common.AbstractCatalogModule;
 import com.oose.labsafety.common.ConsoleIO;
-import com.oose.labsafety.inspection.application.InspectionService;
+import com.oose.labsafety.inspection.service.InspectionService;
 import com.oose.labsafety.inspection.domain.InspectionRecord;
 
 import java.time.LocalDateTime;

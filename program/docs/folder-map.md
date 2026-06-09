@@ -56,7 +56,7 @@ program/
 
 ```text
 user/
-  application/
+  service/
   domain/
   infrastructure/
   presentation/

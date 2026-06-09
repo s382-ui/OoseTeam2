@@ -2,7 +2,7 @@ package com.oose.labsafety.laboratory.presentation;
 
 import com.oose.labsafety.common.AbstractCatalogModule;
 import com.oose.labsafety.common.ConsoleIO;
-import com.oose.labsafety.laboratory.application.LaboratoryService;
+import com.oose.labsafety.laboratory.service.LaboratoryService;
 import com.oose.labsafety.laboratory.domain.LaboratoryProfile;
 
 import java.time.LocalDateTime;

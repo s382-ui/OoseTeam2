@@ -15,7 +15,7 @@
 | v1.2.0 | 2026-05-29 | SRS/SDD/코드 추적 문서와 공통 조회/삭제 흐름 반영 |
 | v1.3.0 | 2026-05-29 | 문서 기준 공통 수정 흐름 및 중복 등록 방지 반영 |
 
-`program` 폴더는 연구실 안전관리 시스템의 Java 21 구현체다. 현재 구현은 콘솔 기반 모듈형 모놀리식 구조이며, 기능은 `user`, `laboratory`, `chemical`, `waste`, `inspection`, `education` 모듈로 분리한다. 저장소 구현은 MySQL JDBC를 사용하며, 접속 정보는 `src/main/resources/db.properties`에서 설정한다.
+`program` 폴더는 연구실 안전관리 시스템의 Java 21 구현체다. 현재 구현은 JavaFX/FXML 기반 기본 UI와 기존 콘솔 모듈형 구조를 함께 둔다. 기능은 `user`, `laboratory`, `chemical`, `waste`, `inspection`, `education` 모듈로 분리한다. 저장소 구현은 MySQL JDBC를 사용하며, 접속 정보는 `src/main/resources/db.properties`에서 설정한다.
 
 최신 기준 문서는 `../reference_mdFileList/SRS_V1_0_0528.md`와 `../reference_mdFileList/SDD_V1_0_0528.md`이며, 현재 코드의 도메인 입력 항목과 공통 메뉴 흐름은 해당 명세를 기준으로 정렬했다.
 
@@ -42,7 +42,7 @@
 ## 유지보수 원칙
 
 - 화면은 `presentation`에서만 다룬다.
-- 유스케이스 흐름은 `application`에서만 조립한다.
+- 유스케이스 흐름은 `service`에서만 조립한다.
 - 상태와 규칙은 `domain`에서 유지한다.
 - 저장과 조회는 `infrastructure`에 둔다.
 - 공통 기능은 `common`에 모은다.
@@ -51,3 +51,4 @@
 
 - 현재 `program` 루트에는 `gradlew.bat`가 없으므로, 실행/빌드는 로컬 `gradle` 설치 또는 IDE 실행이 필요하다.
 - MySQL JDBC 드라이버는 Gradle 의존성(`com.mysql:mysql-connector-j`)으로 받는다.
+- 기본 `gradle run`은 JavaFX 메인 UI(`LabSafetyFxApplication`)를 실행한다.

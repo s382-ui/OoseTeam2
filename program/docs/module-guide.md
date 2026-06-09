@@ -32,7 +32,7 @@
 ## 1. 사용자 모듈
 
 - 목적: 사용자 기본정보 등록/조회 및 계정 상태를 관리한다.
-- 중심 파일: `user/domain`, `user/application`, `user/infrastructure`, `user/presentation`
+- 중심 파일: `user/domain`, `user/service`, `user/infrastructure`, `user/presentation`
 - 핵심 속성: `userId`, `userName`, `department`, `role`, `contact`, `email`, `accountStatus`, `registeredAt`
 - 변경 기준: 사용자 식별자 체계, 권한 정책, 계정 상태 정의가 바뀔 때 함께 수정한다.
 

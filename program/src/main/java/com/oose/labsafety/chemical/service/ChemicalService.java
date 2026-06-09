@@ -1,4 +1,4 @@
-package com.oose.labsafety.chemical.application;
+package com.oose.labsafety.chemical.service;
 
 import com.oose.labsafety.chemical.domain.ChemicalItem;
 import com.oose.labsafety.chemical.infrastructure.ChemicalRepository;

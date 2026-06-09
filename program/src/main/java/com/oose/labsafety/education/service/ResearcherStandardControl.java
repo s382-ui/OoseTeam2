@@ -1,4 +1,4 @@
-package com.oose.labsafety.education.application;
+package com.oose.labsafety.education.service;
 
 import com.oose.labsafety.education.domain.CompletionStandard;
 import com.oose.labsafety.education.domain.ResearcherCategory;

@@ -1,8 +1,8 @@
 package com.oose.labsafety.education.presentation;
 
 import com.oose.labsafety.common.ConsoleIO;
-import com.oose.labsafety.education.application.EducationCompletionControl;
-import com.oose.labsafety.education.application.EducationReferenceControl;
+import com.oose.labsafety.education.service.EducationCompletionControl;
+import com.oose.labsafety.education.service.EducationReferenceControl;
 import com.oose.labsafety.education.domain.EducationCompletionResult;
 import com.oose.labsafety.education.domain.EducationOpening;
 

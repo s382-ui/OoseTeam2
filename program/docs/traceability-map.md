@@ -38,7 +38,7 @@
 | SDD 요소 | Java 계층 | 대표 파일 |
 | -------- | --------- | --------- |
 | Boundary/View | `presentation`, `ui` | `*Menu.java`, `MainMenu.java` |
-| Control/Service | `application` | `*Service.java` |
+| Control/Service | `service` | `*Service.java` |
 | Entity | `domain` | `*Record.java`, `*Profile.java`, `*Item.java` |
 | Repository/DB Access | `infrastructure` | `*Repository.java` |
 | 공통 규약 | `common` | `AbstractCatalogModule.java`, `AbstractCatalogService.java` |

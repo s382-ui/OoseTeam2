@@ -1,4 +1,4 @@
-package com.oose.labsafety.user.application;
+package com.oose.labsafety.user.service;
 
 import com.oose.labsafety.common.AbstractCatalogService;
 import com.oose.labsafety.user.domain.UserAccount;

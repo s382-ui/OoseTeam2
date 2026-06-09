@@ -1,7 +1,7 @@
 package com.oose.labsafety.education.presentation;
 
 import com.oose.labsafety.common.ConsoleIO;
-import com.oose.labsafety.education.application.ResearcherStandardControl;
+import com.oose.labsafety.education.service.ResearcherStandardControl;
 import com.oose.labsafety.education.domain.CompletionStandard;
 import com.oose.labsafety.education.domain.ResearcherCategory;
 

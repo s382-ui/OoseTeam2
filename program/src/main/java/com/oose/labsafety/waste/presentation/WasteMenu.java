@@ -2,7 +2,7 @@ package com.oose.labsafety.waste.presentation;
 
 import com.oose.labsafety.common.AbstractCatalogModule;
 import com.oose.labsafety.common.ConsoleIO;
-import com.oose.labsafety.waste.application.WasteService;
+import com.oose.labsafety.waste.service.WasteService;
 import com.oose.labsafety.waste.domain.WasteRecord;
 
 import java.math.BigDecimal;

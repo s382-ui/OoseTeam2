@@ -1,6 +1,6 @@
 package com.oose.labsafety.chemical.presentation;
 
-import com.oose.labsafety.chemical.application.ChemicalService;
+import com.oose.labsafety.chemical.service.ChemicalService;
 import com.oose.labsafety.chemical.domain.ChemicalItem;
 import com.oose.labsafety.common.AbstractCatalogModule;
 import com.oose.labsafety.common.ConsoleIO;

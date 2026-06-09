@@ -4,7 +4,7 @@
 
 - 마지막 동기화 일자: 2026-05-29
 - 기준: SDD v1.0.0 (`../../reference_mdFileList/SDD_V1_0_0528.md`)
-- 메모: 현재 구현은 `Boundary -> presentation`, `Control -> application`, `Entity -> domain`, `DB access -> infrastructure` 매핑을 따른다.
+- 메모: 현재 구현은 `Boundary -> presentation`, `Control -> service`, `Entity -> domain`, `DB access -> infrastructure` 매핑을 따른다.
 
 ## 개정 이력
 
@@ -22,7 +22,7 @@
 ```mermaid
 flowchart TB
     UI[ui / presentation]
-    APP[application]
+    APP[service]
     DOM[domain]
     INFRA[infrastructure]
     COMMON[common]
@@ -58,6 +58,6 @@ flowchart TB
 
 1. `domain` record 또는 class
 2. `infrastructure` 저장소
-3. `application` 서비스
+3. `service` 서비스
 4. `presentation` 메뉴
 5. `ApplicationBootstrap` 등록
