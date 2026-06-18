@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const INSPECTION_TYPES = ['일상점검', '정기점검', '특별점검'];
 
@@ -10,9 +10,13 @@ const initForm = {
 export default function ChecklistManagement() {
   const [tab, setTab] = useState('register');
   const [form, setForm] = useState(initForm);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('oss_checklists')) || []; } catch { return []; }
+  });
   const [search, setSearch] = useState({ itemName: '', categoryName: '', inspectionType: '' });
   const [alert, setAlert] = useState('');
+
+  useEffect(() => { localStorage.setItem('oss_checklists', JSON.stringify(data)); }, [data]);
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
