@@ -1,0 +1,14 @@
+[
+  {
+    "courseId": "EC001",
+    "courseName": "연구실 안전교육 기초",
+    "educationType": "온라인",
+    "defaultHours": 3
+  },
+  {
+    "courseId": "EC002",
+    "courseName": "화학물질 취급 안전교육",
+    "educationType": "오프라인",
+    "defaultHours": 4
+  }
+]

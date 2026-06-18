@@ -1,0 +1,22 @@
+[
+  {
+    "userId": "admin001",
+    "userName": "관리자",
+    "department": "안전관리팀",
+    "role": "관리자",
+    "contact": "02-0000-0001",
+    "email": "admin@example.com",
+    "accountStatus": "활성",
+    "registeredAt": "2026-01-02"
+  },
+  {
+    "userId": "user001",
+    "userName": "김연구",
+    "department": "화학공학과",
+    "role": "연구원",
+    "contact": "010-0000-0001",
+    "email": "researcher@example.com",
+    "accountStatus": "활성",
+    "registeredAt": "2026-01-03"
+  }
+]

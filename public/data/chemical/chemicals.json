@@ -1,0 +1,14 @@
+[
+  {
+    "chemicalId": "CHEM001",
+    "chemicalName": "에탄올",
+    "casNumber": "64-17-5",
+    "manufacturerName": "시연화학",
+    "quantity": 10,
+    "unit": "L",
+    "storageLocation": "LAB001 안전보관함",
+    "msdsYn": "Y",
+    "status": "사용",
+    "registeredAt": "2026-01-10"
+  }
+]

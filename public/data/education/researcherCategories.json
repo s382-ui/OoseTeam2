@@ -1,0 +1,14 @@
+[
+  {
+    "researcherCategoryId": "RC001",
+    "categoryName": "연구원",
+    "description": "연구실에 소속된 연구원",
+    "active": true
+  },
+  {
+    "researcherCategoryId": "RC002",
+    "categoryName": "학부생",
+    "description": "학부 연구 참여자",
+    "active": true
+  }
+]
