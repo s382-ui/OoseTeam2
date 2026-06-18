@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const TYPES = ['폐액', '고형 폐기물', '폐유기용매', '폐산', '폐알칼리', '혼합폐기물'];
 
@@ -10,9 +10,13 @@ const initForm = {
 export default function WasteManagement() {
   const [tab, setTab] = useState('register');
   const [form, setForm] = useState(initForm);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('oss_wastes')) || []; } catch { return []; }
+  });
   const [search, setSearch] = useState({ categoryName: '', categoryType: '' });
   const [alert, setAlert] = useState('');
+
+  useEffect(() => { localStorage.setItem('oss_wastes', JSON.stringify(data)); }, [data]);
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 

@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 /* ── 1. 연구활동종사자 & 이수기준 ── */
 function ResearcherSection() {
   const [tab, setTab] = useState('register');
   const [form, setForm] = useState({ researcherId: '', researcherName: '', labName: '', role: '', requiredHours: '', completionDeadline: '' });
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('oss_edu_researchers')) || []; } catch { return []; }
+  });
   const [search, setSearch] = useState('');
   const [alert, setAlert] = useState('');
+
+  useEffect(() => { localStorage.setItem('oss_edu_researchers', JSON.stringify(data)); }, [data]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -96,9 +100,13 @@ function ResearcherSection() {
 function EducationLogSection() {
   const [tab, setTab] = useState('register');
   const [form, setForm] = useState({ logId: '', labName: '', educationDate: '', topic: '', instructor: '', duration: '', attendees: '' });
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('oss_edu_logs')) || []; } catch { return []; }
+  });
   const [search, setSearch] = useState('');
   const [alert, setAlert] = useState('');
+
+  useEffect(() => { localStorage.setItem('oss_edu_logs', JSON.stringify(data)); }, [data]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -190,9 +198,13 @@ function EducationLogSection() {
 function CertificateSection() {
   const [tab, setTab] = useState('register');
   const [form, setForm] = useState({ certId: '', researcherName: '', courseTitle: '', completionDate: '', issueDate: '', issuedBy: '' });
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('oss_edu_certs')) || []; } catch { return []; }
+  });
   const [search, setSearch] = useState('');
   const [alert, setAlert] = useState('');
+
+  useEffect(() => { localStorage.setItem('oss_edu_certs', JSON.stringify(data)); }, [data]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -280,9 +292,13 @@ function CertificateSection() {
 function LearningResultSection() {
   const [tab, setTab] = useState('register');
   const [form, setForm] = useState({ resultId: '', researcherName: '', courseTitle: '', score: '', status: '이수', completedDate: '' });
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('oss_edu_learnings')) || []; } catch { return []; }
+  });
   const [search, setSearch] = useState('');
   const [alert, setAlert] = useState('');
+
+  useEffect(() => { localStorage.setItem('oss_edu_learnings', JSON.stringify(data)); }, [data]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -374,9 +390,13 @@ function LearningResultSection() {
 function CompletionResultSection() {
   const [tab, setTab] = useState('register');
   const [form, setForm] = useState({ completionId: '', researcherName: '', totalHours: '', completedHours: '', completionRate: '', period: '', isCompleted: 'Y' });
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('oss_edu_completions')) || []; } catch { return []; }
+  });
   const [search, setSearch] = useState('');
   const [alert, setAlert] = useState('');
+
+  useEffect(() => { localStorage.setItem('oss_edu_completions', JSON.stringify(data)); }, [data]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

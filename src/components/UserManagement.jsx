@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const ROLES = ['관리자', '연구책임자', '연구원', '대학원생', '학부생', '외부인'];
 const STATUS = ['활성', '비활성', '잠금'];
@@ -11,9 +11,13 @@ const initForm = {
 export default function UserManagement() {
   const [tab, setTab] = useState('register');
   const [form, setForm] = useState(initForm);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('oss_users')) || []; } catch { return []; }
+  });
   const [search, setSearch] = useState({ userName: '', department: '', role: '' });
   const [alert, setAlert] = useState('');
+
+  useEffect(() => { localStorage.setItem('oss_users', JSON.stringify(data)); }, [data]);
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 

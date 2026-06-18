@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const GRADES = ['A', 'B', 'C', 'D'];
 
@@ -11,9 +11,13 @@ const initForm = {
 export default function LaboratoryManagement() {
   const [tab, setTab] = useState('register');
   const [form, setForm] = useState(initForm);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('oss_labs')) || []; } catch { return []; }
+  });
   const [search, setSearch] = useState({ labName: '', buildingName: '', departmentName: '' });
   const [alert, setAlert] = useState('');
+
+  useEffect(() => { localStorage.setItem('oss_labs', JSON.stringify(data)); }, [data]);
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 

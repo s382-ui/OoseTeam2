@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const initForm = {
   chemicalId: '', manufacturerName: '', chemicalName: '', casNumber: '',
@@ -8,9 +8,13 @@ const initForm = {
 export default function ChemicalManagement() {
   const [tab, setTab] = useState('register');
   const [form, setForm] = useState(initForm);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('oss_chemicals')) || []; } catch { return []; }
+  });
   const [search, setSearch] = useState({ chemicalName: '', manufacturerName: '', casNumber: '' });
   const [alert, setAlert] = useState('');
+
+  useEffect(() => { localStorage.setItem('oss_chemicals', JSON.stringify(data)); }, [data]);
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 

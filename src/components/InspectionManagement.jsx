@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const initForm = {
   categoryCode: '', categoryName: '', categoryDetail: '', useYn: 'Y',
@@ -7,9 +7,13 @@ const initForm = {
 export default function InspectionManagement() {
   const [tab, setTab] = useState('register');
   const [form, setForm] = useState(initForm);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('oss_inspections')) || []; } catch { return []; }
+  });
   const [search, setSearch] = useState({ categoryName: '', useYn: '' });
   const [alert, setAlert] = useState('');
+
+  useEffect(() => { localStorage.setItem('oss_inspections', JSON.stringify(data)); }, [data]);
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
