@@ -2,64 +2,40 @@
 
 마지막 동기화: 2026-06-18
 
-## 1. 개요
+## 전체 구조
 
-현재 구현은 React 18 기반의 기능별 계층 구조를 사용한다. 서브시스템별 코드는 `src/features` 아래에 배치하고, 기본 데이터는 JSON 파일, 실행 중 변경 데이터는 브라우저 `localStorage`에 저장한다.
+현재 시스템은 React 프론트엔드와 Java Spring Boot 백엔드로 분리한다.
 
-## 2. 실행 구조
-
-```text
-public/index.html
-        ↓
-src/index.js
-        ↓
-src/app/App.jsx
-        ↓
-src/app/menuConfig.js
-        ↓
-src/features/*/presentation
+```mermaid
+flowchart LR
+    React["React presentation"] --> Api["React API module"]
+    Api --> Controller["Java REST Controller"]
+    Controller --> Service["Java service"]
+    Service --> Domain["Java domain"]
+    Service --> Repository["Java infrastructure"]
+    Repository --> Json["JSON files"]
 ```
 
-## 3. 계층 구조
+## 프론트엔드
 
-```text
-presentation → service → domain
-                    ↓
-              infrastructure
-```
+`frontend/src/features/<기능>`에는 `api`와 `presentation`만 둔다.
 
-- `domain`: 엔티티 생성과 업무 규칙 검증
-- `service`: 유스케이스, 중복 ID 및 참조 ID 검사
-- `infrastructure`: JSON 초기화와 `localStorage` 접근
-- `presentation`: React 화면과 사용자 상호작용
+- `api`: Java REST API 호출
+- `presentation`: React 화면과 사용자 입력
 
-공통 저장 및 검증 코드는 `src/shared`에 둔다. 여러 화면이 사용하는 UI는 `src/components`에 둔다.
+엔티티 검증, 중복 검사, 저장 처리는 프론트엔드에서 수행하지 않는다.
 
-## 4. 데이터 흐름
+## 백엔드
 
-최초 실행 시 Repository가 `public/data/<기능>`의 JSON 배열을 읽고 기능별 저장 키에 초기값을 기록한다. 이후 등록, 조회, 삭제는 service를 거쳐 Repository가 `localStorage`를 갱신한다.
+`backend/src/main/java/com/oose/labsafety/<기능>`은 다음 계층을 사용한다.
 
-화면은 `localStorage`와 JSON 파일을 직접 접근하지 않는다.
+- `domain`: Java record 엔티티와 입력 제약
+- `service`: 등록·조회·삭제 유스케이스와 참조 무결성
+- `infrastructure`: Jackson 기반 JSON Repository
+- `presentation`: REST Controller
 
-## 5. 기능 구조
+## 데이터 저장
 
-```text
-src/features/
-├─ user/
-├─ laboratory/
-├─ chemical/
-├─ waste/
-├─ checklist/
-├─ inspection/
-└─ education/
-```
+배포되는 초기 데이터는 `backend/src/main/resources/data`에 둔다. 실행 시 수정되는 데이터는 `backend/data`에 분리한다.
 
-각 기능은 `domain`, `service`, `infrastructure`, `presentation` 디렉터리를 동일하게 사용한다.
-
-안전교육은 `ResearcherCategory`, `CompletionStandard`, `EducationCourse`, `EducationOpening`, `EducationCompletionResult` 엔티티를 분리하고 ID로 관계를 표현한다.
-
-## 6. 제약
-
-현재 저장 방식은 시연용이다. 데이터는 브라우저별로 분리되며 동시 사용자, 서버 인증, 데이터베이스 외래키 및 감사 이력을 제공하지 않는다.
-
-세부 구현 규칙은 `docs/json-feature-architecture-guide.md`를 따른다.
+이 방식은 시연용 데이터 규모에 적합하며, 향후 데이터베이스를 도입할 때 Java `infrastructure` 구현을 교체할 수 있다.
