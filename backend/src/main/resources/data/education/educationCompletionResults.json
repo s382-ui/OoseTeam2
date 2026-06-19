@@ -1,0 +1,24 @@
+[
+  {
+    "completionResultId": "ECR001",
+    "researcherId": "admin001",
+    "openingId": "EO001",
+    "learningResultId": "",
+    "logId": "",
+    "completionDate": "2026-02-15",
+    "recognizedHours": 3,
+    "completionStatus": "이수",
+    "manualRegistration": true
+  },
+  {
+    "completionResultId": "ECR002",
+    "researcherId": "user001",
+    "openingId": "EO002",
+    "learningResultId": "",
+    "logId": "",
+    "completionDate": "2026-03-20",
+    "recognizedHours": 4,
+    "completionStatus": "이수",
+    "manualRegistration": true
+  }
+]

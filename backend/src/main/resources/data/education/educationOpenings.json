@@ -1,0 +1,16 @@
+[
+  {
+    "openingId": "EO001",
+    "courseId": "EC001",
+    "startDate": "2026-01-01",
+    "endDate": "2026-06-30",
+    "status": "개설"
+  },
+  {
+    "openingId": "EO002",
+    "courseId": "EC002",
+    "startDate": "2026-03-01",
+    "endDate": "2026-03-31",
+    "status": "마감"
+  }
+]

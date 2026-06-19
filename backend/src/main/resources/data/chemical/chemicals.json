@@ -1,0 +1,13 @@
+[
+  {
+    "chemicalId": "CHEM001",
+    "manufacturerName": "시연화학",
+    "chemicalName": "에탄올",
+    "casNumber": "64-17-5",
+    "contentRate": "99.5%",
+    "msdsPath": "msds/ethanol-msds.pdf",
+    "analysisPath": "analysis/ethanol-analysis.pdf",
+    "status": "ACTIVE",
+    "createdAt": "2026-01-10"
+  }
+]

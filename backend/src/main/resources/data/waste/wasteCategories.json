@@ -1,0 +1,12 @@
+[
+  {
+    "categoryCode": "WST001",
+    "categoryName": "폐유기용매",
+    "categoryType": "지정",
+    "propertyInfo": "액상·인화성",
+    "disposalMethod": "전용 용기에 분리 보관",
+    "relatedLaw": "폐기물관리법",
+    "isActive": "Y",
+    "createdAt": "2026-01-10"
+  }
+]

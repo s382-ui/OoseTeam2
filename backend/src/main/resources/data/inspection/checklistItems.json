@@ -1,0 +1,12 @@
+[
+  {
+    "itemId": "CHK001",
+    "itemName": "화학물질 라벨 부착 확인",
+    "categoryName": "화학물질 보관상태",
+    "score": 5,
+    "inspectionType": "일상점검",
+    "requiredYn": true,
+    "useYn": true,
+    "createdAt": "2026-01-11"
+  }
+]

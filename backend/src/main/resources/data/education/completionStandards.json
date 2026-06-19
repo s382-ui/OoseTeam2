@@ -1,0 +1,16 @@
+[
+  {
+    "completionStandardId": "CS001",
+    "researcherCategoryId": "RC001",
+    "requiredHours": 6,
+    "effectiveFrom": "2026-01-01",
+    "effectiveTo": "2026-12-31"
+  },
+  {
+    "completionStandardId": "CS002",
+    "researcherCategoryId": "RC002",
+    "requiredHours": 3,
+    "effectiveFrom": "2026-01-01",
+    "effectiveTo": "2026-12-31"
+  }
+]

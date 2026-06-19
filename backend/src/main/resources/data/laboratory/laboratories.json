@@ -1,0 +1,16 @@
+[
+  {
+    "labId": "LAB001",
+    "labName": "화학공학 실험실",
+    "buildingName": "공학관",
+    "floor": "3",
+    "roomNo": "301",
+    "departmentName": "화학공학과",
+    "managerId": "user001",
+    "managerName": "김연구",
+    "contactNo": "02-0000-1001",
+    "managementGrade": "A",
+    "isActive": "Y",
+    "createdAt": "2026-01-05"
+  }
+]
