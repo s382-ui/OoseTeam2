@@ -10,4 +10,16 @@ public class ChemicalService extends CrudService<Chemical> {
     public ChemicalService(ChemicalRepository repository) {
         super(repository);
     }
+
+    @Override
+    public Chemical register(Chemical chemical) {
+        if (chemical.casNumber() != null && !chemical.casNumber().isBlank()) {
+            boolean duplicatedCas = repository.findAll().stream()
+                    .anyMatch(item -> chemical.casNumber().equalsIgnoreCase(item.casNumber()));
+            if (duplicatedCas) {
+                throw new IllegalArgumentException("이미 등록된 CAS 번호입니다: " + chemical.casNumber());
+            }
+        }
+        return super.register(chemical);
+    }
 }

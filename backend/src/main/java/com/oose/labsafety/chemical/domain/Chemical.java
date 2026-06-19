@@ -2,26 +2,25 @@ package com.oose.labsafety.chemical.domain;
 
 import com.oose.labsafety.common.domain.Identifiable;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.PositiveOrZero;
 
 import java.time.LocalDate;
 
 public record Chemical(
         @NotBlank(message = "화학물질 ID는 필수입니다.") String chemicalId,
+        @NotBlank(message = "제조사명은 필수입니다.") String manufacturerName,
         @NotBlank(message = "화학물질명은 필수입니다.") String chemicalName,
         String casNumber,
-        String manufacturerName,
-        @PositiveOrZero(message = "수량은 0 이상이어야 합니다.") double quantity,
-        String unit,
-        String storageLocation,
-        String msdsYn,
+        String contentRate,
+        String msdsPath,
+        String analysisPath,
         String status,
-        String registeredAt
+        String createdAt
 ) implements Identifiable {
     public Chemical {
-        registeredAt = registeredAt == null || registeredAt.isBlank()
+        status = status == null || status.isBlank() ? "ACTIVE" : status;
+        createdAt = createdAt == null || createdAt.isBlank()
                 ? LocalDate.now().toString()
-                : registeredAt;
+                : createdAt;
     }
 
     @Override

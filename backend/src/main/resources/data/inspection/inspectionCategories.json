@@ -1,9 +1,9 @@
 [
   {
-    "inspectionCategoryId": "INSP001",
+    "categoryCode": "INSP001",
     "categoryName": "화학물질 보관상태",
-    "description": "라벨, 밀폐, 분리보관 상태를 확인한다.",
-    "useYn": "Y",
-    "registeredAt": "2026-01-11"
+    "categoryDetail": "라벨, 밀폐, 분리보관 상태를 확인한다.",
+    "useYn": true,
+    "createdAt": "2026-01-11"
   }
 ]

@@ -3,9 +3,20 @@ import EntityManagementPage from '../../../components/EntityManagementPage';
 import { chemicalService } from '../api/chemicalApi';
 
 const initialForm = {
-  chemicalId: '', chemicalName: '', casNumber: '', manufacturerName: '',
-  quantity: '', unit: 'L', storageLocation: '', msdsYn: 'Y', status: '사용',
+  chemicalId: '', manufacturerName: '', chemicalName: '', casNumber: '',
+  contentRate: '', msdsPath: '', analysisPath: '', status: 'ACTIVE',
 };
+
+const fields = [
+  { name: 'chemicalId', label: '화학물질 ID', required: true },
+  { name: 'manufacturerName', label: '제조사명', required: true },
+  { name: 'chemicalName', label: '화학물질명', required: true },
+  { name: 'casNumber', label: 'CAS 번호', placeholder: '예: 64-17-5' },
+  { name: 'contentRate', label: '성분 함유량', placeholder: '예: 99.5%' },
+  { name: 'msdsPath', label: 'MSDS 파일 경로', helpText: '현재 JSON 저장 방식에서는 업로드된 문서의 경로 또는 파일명을 기록합니다.' },
+  { name: 'analysisPath', label: '성분분석표 파일 경로' },
+  { name: 'status', label: '상태', required: true, options: [{ value: 'ACTIVE', label: '정상' }, { value: 'DELETED', label: '삭제' }] },
+];
 
 export default function ChemicalManagement() {
   return (
@@ -16,28 +27,21 @@ export default function ChemicalManagement() {
       initialForm={initialForm}
       idField="chemicalId"
       service={chemicalService}
-      searchFields={['chemicalId', 'chemicalName', 'casNumber', 'manufacturerName']}
-      fields={[
-        { name: 'chemicalId', label: '화학물질 ID', required: true },
-        { name: 'chemicalName', label: '화학물질명', required: true },
+      fields={fields}
+      searchFilters={[
+        { name: 'manufacturerName', label: '제조사명' },
+        { name: 'chemicalName', label: '화학물질명' },
         { name: 'casNumber', label: 'CAS 번호' },
-        { name: 'manufacturerName', label: '제조사' },
-        { name: 'quantity', label: '수량', type: 'number', min: 0 },
-        { name: 'unit', label: '단위', options: ['L', 'mL', 'kg', 'g'] },
-        { name: 'storageLocation', label: '보관 위치' },
-        { name: 'msdsYn', label: 'MSDS 여부', options: ['Y', 'N'] },
-        { name: 'status', label: '상태', options: ['사용', '폐기', '보관'] },
+        { name: 'status', label: '상태', options: [{ value: 'ACTIVE', label: '정상' }, { value: 'DELETED', label: '삭제' }], exact: true },
       ]}
       columns={[
-        { key: 'chemicalId', label: 'ID' },
+        { key: 'chemicalId', label: '화학물질 ID' },
+        { key: 'manufacturerName', label: '제조사명' },
         { key: 'chemicalName', label: '화학물질명' },
         { key: 'casNumber', label: 'CAS 번호' },
-        { key: 'manufacturerName', label: '제조사' },
-        { key: 'quantity', label: '수량' },
-        { key: 'unit', label: '단위' },
-        { key: 'storageLocation', label: '보관 위치' },
-        { key: 'msdsYn', label: 'MSDS' },
-        { key: 'status', label: '상태' },
+        { key: 'contentRate', label: '함유량' },
+        { key: 'status', label: '상태', render: (value) => value === 'ACTIVE' ? '정상' : '삭제' },
+        { key: 'createdAt', label: '등록일시' },
       ]}
     />
   );

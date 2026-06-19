@@ -55,6 +55,13 @@ public class JsonFileRepository<T extends Identifiable> {
         return entity;
     }
 
+    public synchronized List<T> saveAll(List<T> newEntities) {
+        List<T> entities = findAll();
+        entities.addAll(0, newEntities);
+        write(entities);
+        return new ArrayList<>(newEntities);
+    }
+
     public synchronized void deleteById(String id) {
         List<T> entities = findAll();
         entities.removeIf(entity -> entity.id().equals(id));

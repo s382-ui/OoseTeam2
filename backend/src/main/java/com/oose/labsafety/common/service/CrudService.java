@@ -6,7 +6,7 @@ import com.oose.labsafety.common.infrastructure.JsonFileRepository;
 import java.util.List;
 
 public class CrudService<T extends Identifiable> {
-    private final JsonFileRepository<T> repository;
+    protected final JsonFileRepository<T> repository;
 
     protected CrudService(JsonFileRepository<T> repository) {
         this.repository = repository;

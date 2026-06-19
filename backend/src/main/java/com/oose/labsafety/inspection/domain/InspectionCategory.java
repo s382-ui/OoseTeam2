@@ -6,20 +6,20 @@ import jakarta.validation.constraints.NotBlank;
 import java.time.LocalDate;
 
 public record InspectionCategory(
-        @NotBlank(message = "점검분야 ID는 필수입니다.") String inspectionCategoryId,
+        @NotBlank(message = "점검분야 분류 코드는 필수입니다.") String categoryCode,
         @NotBlank(message = "점검분야명은 필수입니다.") String categoryName,
-        String description,
-        String useYn,
-        String registeredAt
+        String categoryDetail,
+        boolean useYn,
+        String createdAt
 ) implements Identifiable {
     public InspectionCategory {
-        registeredAt = registeredAt == null || registeredAt.isBlank()
+        createdAt = createdAt == null || createdAt.isBlank()
                 ? LocalDate.now().toString()
-                : registeredAt;
+                : createdAt;
     }
 
     @Override
     public String id() {
-        return inspectionCategoryId;
+        return categoryCode;
     }
 }

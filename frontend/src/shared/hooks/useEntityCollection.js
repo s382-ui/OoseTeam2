@@ -31,5 +31,5 @@ export function useEntityCollection(service) {
     await refresh();
   };
 
-  return { data, loading, error, setError, register, remove };
+  return { data, loading, error, setError, register, remove, refresh };
 }
