@@ -7,8 +7,5 @@ export function createRestService(endpoint, { serialize = (entity) => entity } =
       method: 'POST',
       body: JSON.stringify(serialize(entity)),
     }),
-    remove: (id) => apiRequest(`${endpoint}/${encodeURIComponent(id)}`, {
-      method: 'DELETE',
-    }),
   };
 }

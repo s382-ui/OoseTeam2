@@ -12,6 +12,7 @@ import java.nio.file.Path;
 import java.util.UUID;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -145,6 +146,12 @@ class LabSafetyApiIntegrationTest {
                                 """))
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.message").value("이미 등록된 CAS 번호입니다: 64-17-5"));
+    }
+
+    @Test
+    void doesNotExposeDeleteForManagementResources() throws Exception {
+        mockMvc.perform(delete("/api/waste-categories/WST001"))
+                .andExpect(status().isNotFound());
     }
 
     @Test

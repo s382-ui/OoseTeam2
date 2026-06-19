@@ -32,7 +32,7 @@ export default function EntityManagementPage({
   const [bulkFile, setBulkFile] = useState(null);
   const [bulkRows, setBulkRows] = useState([]);
   const [bulkError, setBulkError] = useState('');
-  const { data, loading, error, setError, register, remove, refresh } = useEntityCollection(service);
+  const { data, loading, error, setError, register, refresh } = useEntityCollection(service);
 
   const filtered = useMemo(() => data.filter((record) =>
     filters.every((filter) => {
@@ -57,16 +57,6 @@ export default function EntityManagementPage({
     } catch (submitError) {
       setNotice('');
       setError(submitError.message);
-    }
-  };
-
-  const handleDelete = async (id) => {
-    if (!window.confirm('선택한 데이터를 삭제하시겠습니까?')) return;
-    try {
-      await remove(id);
-      if (selected?.[idField] === id) setSelected(null);
-    } catch (deleteError) {
-      setError(deleteError.message);
     }
   };
 
@@ -253,7 +243,7 @@ export default function EntityManagementPage({
                 <thead>
                   <tr>
                     {columns.map((column) => <th key={column.key}>{column.label}</th>)}
-                    <th>관리</th>
+                    <th>기능</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -272,7 +262,6 @@ export default function EntityManagementPage({
                         <div className="row-actions">
                           <button className="btn btn-secondary btn-sm" onClick={() => setSelected(record)}>상세</button>
                           {copyable && <button className="btn btn-secondary btn-sm" onClick={() => copyRecord(record)}>복사</button>}
-                          <button className="btn btn-danger btn-sm" onClick={() => handleDelete(record[idField])}>삭제</button>
                         </div>
                       </td>
                     </tr>

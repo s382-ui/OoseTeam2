@@ -63,7 +63,7 @@ backend/src/main/resources/data/
 backend/data/
 ```
 
-등록과 삭제는 `backend/data`의 JSON에 반영된다. 초기 상태로 되돌리려면 백엔드를 종료하고 `backend/data` 폴더를 삭제한 뒤 다시 실행한다.
+등록은 `backend/data`의 JSON에 반영된다. 초기 상태로 되돌리려면 백엔드를 종료하고 `backend/data` 폴더를 삭제한 뒤 다시 실행한다.
 
 화학물질, 폐기물, 체크리스트, 점검분야 데이터의 필드 구조가 SDD 기준으로 변경되었다. 이전 버전에서 생성한 `backend/data`가 남아 있으면 같은 방법으로 삭제한 뒤 재실행한다.
 
@@ -71,5 +71,9 @@ backend/data/
 
 사용자 관리의 `대량 등록` 탭에서 CSV 양식을 내려받아 작성한 후 업로드한다.
 필수 열과 검증 규칙은 `docs/non-education-management.md`를 참조한다.
+
+## 수동 검증
+
+각 서브시스템의 테스트 데이터, 실행 순서, 예상 결과는 `docs/subsystem-verification-scenarios.md`를 참조한다.
 
 `backend/data`, `frontend/build`, `frontend/node_modules`, `backend/build`, `backend/.gradle`은 자동 생성 파일이므로 Git에 커밋하지 않는다.

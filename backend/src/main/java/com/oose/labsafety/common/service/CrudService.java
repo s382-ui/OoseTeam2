@@ -22,11 +22,4 @@ public class CrudService<T extends Identifiable> {
         }
         return repository.save(entity);
     }
-
-    public void delete(String id) {
-        if (repository.findById(id).isEmpty()) {
-            throw new IllegalArgumentException("삭제할 데이터를 찾을 수 없습니다: " + id);
-        }
-        repository.deleteById(id);
-    }
 }

@@ -215,13 +215,6 @@
 
 .btn-secondary:hover { background: #e1e5eb; }
 
-.btn-danger {
-  background: #fee2e2;
-  color: #e74c3c;
-}
-
-.btn-danger:hover { background: #fecaca; }
-
 .btn-sm {
   padding: 4px 12px;
   font-size: 12px;

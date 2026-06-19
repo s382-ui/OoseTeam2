@@ -26,10 +26,5 @@ export function useEntityCollection(service) {
     await refresh();
   };
 
-  const remove = async (id) => {
-    await service.remove(id);
-    await refresh();
-  };
-
-  return { data, loading, error, setError, register, remove, refresh };
+  return { data, loading, error, setError, register, refresh };
 }
